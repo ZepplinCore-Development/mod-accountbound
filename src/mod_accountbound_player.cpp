@@ -19,6 +19,7 @@ void AccountBound::OnPlayerAchievementComplete(Player* player, AchievementEntry 
 
 void AccountBound::OnPlayerBeforeStoreOrEquipNewItem(Player* player, uint32 /*vendorslot*/, uint32& itemEntry, uint8 /*count*/, uint8 /*bag*/, uint8 /*slot*/, ItemTemplate const* /*pProto*/, Creature* /*pVendor*/, VendorItem const* /*crItem*/, bool /*bStore*/)
 {
+    Item * item = player->GetItemByEntry(itemEntry);
     if (player->IsGameMaster() && !EnableGamemasters)
     {
         return;
